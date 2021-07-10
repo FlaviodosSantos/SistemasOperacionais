@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <pthread.h>
+#include <sys/types.h>
 
 void* funcao_thread(void* arg)
 {
