@@ -2,12 +2,15 @@
 #include <unistd.h>
 #include <pthread.h>
 #include <sys/types.h>
+#include <sys/syscall.h>
+
+#define gettid() syscall(SYS_gettid)
 
 void* funcao_thread(void* arg)
 {
-    printf("\tNova thread criada com PID %d.\n", 
-            getpid());
-    sleep(50);
+    printf("\tNova thread criada com PID %d e TID %ld.\n", 
+            getpid(), gettid());
+    sleep(10);
     return NULL;
 }
 
@@ -24,7 +27,7 @@ int main()
     //printf("Identificador da thread %lu\n",thread1);
     //printf("Identificador da thread %lu\n",thread2);
     
-    sleep(20);
+    sleep(5);
     
     printf("Main finalizando\n");
 
