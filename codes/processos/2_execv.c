@@ -2,6 +2,7 @@
 // pag. 56
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 
 int main ()
@@ -13,7 +14,7 @@ int main ()
     execv("/bin/cat", cmd);
 
     printf("Esta mensagem não será impressa. \n");
-    
+
     exit(0);
 }
 
