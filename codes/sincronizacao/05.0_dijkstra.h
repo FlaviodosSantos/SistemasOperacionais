@@ -1,3 +1,6 @@
+// codigo do livro Sistemas Distribuidos
+// pag. 129
+
 /* SEMAFORO DE DIJKSTRA - BIBLIOTECA */
 
 int sem_create(key_t key, int initval)
