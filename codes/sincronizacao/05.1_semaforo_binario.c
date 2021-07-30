@@ -6,6 +6,7 @@
 #include <sys/sem.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
 #include "05.0_dijkstra.h"
 
 #define KEY 123
