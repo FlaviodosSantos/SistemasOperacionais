@@ -12,7 +12,7 @@
 int main () 
 {
     int semid;
-    if ((semid = semget(KEY, 4, IPC_CREAT|IPC_EXCL|0600)) ==-1) 
+    if ((semid = semget(KEY, 4, IPC_CREAT|IPC_EXCL|0600)) == -1) 
     {
         printf("Erro ao criar o semaforo\n");
         exit(1);
