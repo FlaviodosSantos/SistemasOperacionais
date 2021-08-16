@@ -29,3 +29,24 @@ void *producer(void *ptr)
 
     pthread_exit(0);
 }
+
+void *consumer(void *ptr)
+{
+    int i;
+
+    for (i = 1; i <= MAX; i++){
+        pthread_mutex_lock(&the_mutex);
+        
+        while (buffer == 0) {
+            pthread_cond_wait(&condc, &the_mutex);
+        }
+        
+        buffer = 0;
+
+        pthread_cond_signal(&condp);
+        pthread_mutex_unlock(&the_mutex);
+    }
+
+    pthread_exit(0);
+}
+
