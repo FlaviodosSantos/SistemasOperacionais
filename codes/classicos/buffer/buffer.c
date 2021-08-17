@@ -133,7 +133,7 @@ void * consumer()
 
         //
         // TODO: precisa bloquear ate que tenha algo a consumir
-        //
+        P(full);
         
         printf("- Consumidor entrou em ação!\n");
 
@@ -141,7 +141,7 @@ void * consumer()
 
         //
         // TODO: precisa garantir exclusão mutua ao acessar o buffer
-        //
+        P(mutex);
 
         printf("\t- Consumidor vai limpar posição %d\n", out);
 
@@ -160,11 +160,11 @@ void * consumer()
 
         //
         // TODO: saindo da seção critica
-        //
+        V(mutex);
         
         //
         // TODO: liberando o recurso
-        //
+        V(empty);
 
         i++;
     }
