@@ -185,12 +185,13 @@ void * producer(void * id)
 
     //
     // TODO: precisa bloquear até que tenha posicao disponível no buffer
-    //
+    P(empty);
+
     printf("> Produtor %d entrou em ação!\n",i);
 
     // 
     // TODO: precisa garantir o acesso exclusivo ao buffer
-    //
+    P(mutex);
 
     // numero aleatorio de 0 a 99
     produto = gera_rand(100);
@@ -212,11 +213,11 @@ void * producer(void * id)
 
     // 
     // TODO: liberar o acesso ao buffer
-    //
+    V(mutex);
     
     //
     // TODO: liberar para o consumidor acessar o buffer
-    //
+    V(full);
 }
 
 int gera_rand(int limit)
@@ -236,3 +237,11 @@ void print_buffer()
     printf("\n");
 }
 
+/*
+Para compilar(no LINUX) este programa como "buffer" :
+# gcc -pthread buffer.c -o buffer
+
+Para rodar:
+# ./buffer
+
+*/
