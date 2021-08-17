@@ -68,7 +68,9 @@ int main(int argc, char ** argv)
     //
     // TODO: Criação dos semáforos (aqui é quando define seus
     // valores, usando a biblioteca dijkstra.h
-    
+    mutex = sem_create(KEY, 1);
+    full = sem_create(KEY, 0);
+    empty = sem_create(KEY, N_BUFFER);
     
     // gerando um buffer de N inteiros
     buffer = malloc(N_BUFFER * sizeof(int));
