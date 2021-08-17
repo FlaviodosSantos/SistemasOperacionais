@@ -11,6 +11,10 @@
 
 //
 // TODO: Definição dos semáforos (variaveis precisam ser globais)
+pthread_t full;
+pthread_t empty;
+pthread_t mutex; 
+
 //
 
 // ponteiro para a fila do buffer
