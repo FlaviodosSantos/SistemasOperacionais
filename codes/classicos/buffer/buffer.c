@@ -104,8 +104,8 @@ int main(int argc, char ** argv)
 
     //
     // TODO: Excluindo os semaforos (dijkstra.h)
-    sem_delete(empty); 
-    sem_delete(full); 
+    sem_delete(empty);
+    sem_delete(full);
     sem_delete(mutex); 
 
     // liberando a memoria alocada
