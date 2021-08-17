@@ -65,3 +65,11 @@ int main (int argc, char **argv)
     pthread_mutex_destroy(&the_mutex);
 }
 
+/*
+Para compilar(no LINUX) este programa como "07_produtor-consumidor" :
+# gcc -pthread 07_produtor-consumidor.c -o 07_produtor-consumidor
+
+Para rodar:
+# ./07_produtor-consumidor
+
+*/
