@@ -15,7 +15,8 @@ pthread_t full;
 pthread_t empty;
 pthread_t mutex; 
 
-//
+// definição da chave
+#define KEY 1234
 
 // ponteiro para a fila do buffer
 int * buffer;
@@ -67,7 +68,7 @@ int main(int argc, char ** argv)
     //
     // TODO: Criação dos semáforos (aqui é quando define seus
     // valores, usando a biblioteca dijkstra.h
-    // 
+    
     
     // gerando um buffer de N inteiros
     buffer = malloc(N_BUFFER * sizeof(int));
